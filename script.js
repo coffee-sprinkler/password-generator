@@ -57,16 +57,16 @@ const copyPassword = () => {
 const setMessages = text => {
   let mess;
   if (text === 'errorGenerate') {
-    mess = 'Please select some options!';
+    mess = 'Please select some options! ❌';
   }
   if (text === 'errorCopy') {
-    mess = 'Empty Password Value!';
+    mess = 'Empty Password Value! ❌';
   }
   if (text === 'generate') {
-    mess = 'Password Generated!';
+    mess = 'Password Generated! 👍';
   }
   if (text === 'copy') {
-    mess = 'Password Copied!';
+    mess = 'Password Copied! 👍';
   }
 
   message.textContent = mess;
