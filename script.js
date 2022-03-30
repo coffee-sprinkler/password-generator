@@ -29,6 +29,8 @@ const generate = () => {
     ...(isUpperCase ? uppercase : []),
   ];
 
+  if (!availableCharacters.length) return setMessages('errorGenerate');
+
   let password = '';
 
   Array.from(Array(passwordLength)).forEach(index => {
@@ -37,18 +39,37 @@ const generate = () => {
   });
 
   inputPassword.value = password;
+  return setMessages('generate');
 };
 
 const copyPassword = () => {
-  if (!Boolean(inputPassword.value)) return;
+  if (!Boolean(inputPassword.value)) return setMessages('errorCopy');
 
   inputPassword.select();
   inputPassword.setSelectionRange(0, 99999);
 
   navigator.clipboard.writeText(inputPassword.value);
 
-  message.textContent = 'Password Copied!';
   inputPassword.value = '';
+  return setMessages('copy');
+};
+
+const setMessages = text => {
+  let mess;
+  if (text === 'errorGenerate') {
+    mess = 'Please select some options!';
+  }
+  if (text === 'errorCopy') {
+    mess = 'Empty Password Value!';
+  }
+  if (text === 'generate') {
+    mess = 'Password Generated!';
+  }
+  if (text === 'copy') {
+    mess = 'Password Copied!';
+  }
+
+  message.textContent = mess;
 
   setTimeout(() => {
     message.textContent = '';
