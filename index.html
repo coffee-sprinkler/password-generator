@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./script.js" defer></script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="copied-message"></div>
+      <div class="password-generated">
+        <input
+          type="text"
+          name="password"
+          id="password"
+          readonly
+          placeholder="password here"
+        />
+        <button data-copy>copy</button>
+      </div>
+      <button class="generate" data-generate>generate password</button>
+      <hr />
+      <div class="options">
+        <div class="options-item">
+          <select name="length" id="length">
+            <option disabled>weak</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option disabled>strong</option>
+            <option value="12" selected>12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+          </select>
+          <label for="length">password length</label>
+        </div>
+        <div class="options-item">
+          <input type="checkbox" name="symbols" id="symbols" />
+          <span class="checkmark"></span>
+          <label for="symbols"> has symbols</label>
+        </div>
+        <div class="options-item">
+          <input type="checkbox" name="numbers" id="numbers" checked />
+          <span class="checkmark"></span>
+          <label for="numbers">has numbers</label>
+        </div>
+        <div class="options-item">
+          <input type="checkbox" name="lowercase" id="lowercase" />
+          <span class="checkmark"></span>
+          <label for="lowercase">is lowercase</label>
+        </div>
+        <div class="options-item">
+          <input type="checkbox" name="uppercase" id="uppercase" checked />
+          <span class="checkmark"></span>
+          <label for="uppercase">is uppercase</label>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
